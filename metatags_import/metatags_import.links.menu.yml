@@ -1,0 +1,5 @@
+metatags_import.import:
+  title: 'Import'
+  route_name: metatags_import.import
+  description: 'Allow to manage Import metatags using csv file.'
+  parent: entity.metatag_defaults.collection

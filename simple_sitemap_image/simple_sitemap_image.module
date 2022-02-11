@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Contains simple_sitemap_image.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function simple_sitemap_image_media_help($route_name, RouteMatchInterface $route_match) {
+  $stringTranslation = \Drupal::service('string_translation');
+  if ($route_name === 'help.page.simple_sitemap_image') {
+    return [
+      'title' => [
+        '#type' => 'html_tag',
+        '#tag' => 'h3',
+        '#value' => $stringTranslation->translate('About'),
+      ],
+      'description' => [
+        '#type' => 'html_tag',
+        '#tag' => 'p',
+        '#value' => $stringTranslation->translate('This module makes a integration to create sitemaps files'),
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function simple_sitemap_image_cron() {
+  $bundles = \Drupal::service('config.factory')
+    ->get('simple_sitemap_image.settings')
+    ->get('bundles');
+
+  if (empty($bundles)) {
+    \Drupal::service('logger.factory')
+      ->get('simple_sitemap_image')
+      ->notice('There isn\'t content type selected');
+    return;
+  }
+
+  $entities = \Drupal::service('entity_type.manager')
+    ->getStorage('node')
+    ->loadByProperties(['type' => $bundles]);
+
+  if (empty($entities)) {
+    \Drupal::service('logger.factory')
+      ->get('simple_sitemap_image')
+      ->notice('There isn\'t content created for content types selected');
+    return;
+  }
+
+  foreach ($entities as $entity) {
+    $url = $entity->toUrl('canonical', ['absolute' => TRUE])->toString();
+    $images_url[$url] = \Drupal::service('simple_sitemap_image.services')
+      ->entityMapping($entity);
+  }
+
+  $file = \Drupal::service('simple_sitemap_image.services')
+    ->fileCreate($images_url);
+
+  if ($file) {
+    \Drupal::service('logger.factory')
+      ->get('simple_sitemap_image')
+      ->notice('Process finished successfully, image sitemap created.');
+  }
+}

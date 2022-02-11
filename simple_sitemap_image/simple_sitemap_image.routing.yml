@@ -1,0 +1,15 @@
+simple_sitemap_image.batch:
+  path: '/admin/config/search/simple-sitemap/generate'
+  defaults:
+    _form: \Drupal\simple_sitemap_image\Form\SimpleSitemapImageBatchForm
+    _title: 'Simple sitemap image'
+  requirements:
+    _permission: 'access simple sitemap image generate'
+
+simple_sitemap_image.settings:
+  path: '/admin/config/search/simple-sitemap/settings'
+  defaults:
+    _form: \Drupal\simple_sitemap_image\Form\SimpleSitemapImageSettingsForm
+    _title: 'Simple Sitemap Image - settings'
+  requirements:
+    _permission: 'access simple sitemap image generate'

@@ -1,0 +1,9 @@
+name: Simple Image Sitemap
+description: This module Alter base controller simple sitemap module.
+package: custom
+
+core_version_requirement: ^8 || ^9
+type: module
+
+dependencies:
+  - simple_sitemap:simple_sitemap

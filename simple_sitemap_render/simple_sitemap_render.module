@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains simple_sitemap_render.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function simple_sitemap_render_help($route_name, RouteMatchInterface $route_match) {
+  $stringTranslation = \Drupal::service('string_translation');
+
+  if ($route_name === 'help.page.simple_sitemap_render') {
+    return [
+      'title' => [
+        '#type' => 'html_tag',
+        '#tag' => 'h3',
+        '#value' => $stringTranslation->translate('About'),
+      ],
+      'description' => [
+        '#type' => 'html_tag',
+        '#tag' => 'p',
+        '#value' => $stringTranslation->translate(
+          'This module Alter base controller simple sitemap module.'
+        ),
+      ],
+    ];
+  }
+}

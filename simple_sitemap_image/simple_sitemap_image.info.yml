@@ -1,0 +1,10 @@
+name: Simple Sitemap Image
+
+description: This module makes a integration to create image sitemap file
+package: custom
+
+core: 8.x
+type: module
+
+dependencies:
+  - simple_sitemap:simple_sitemap

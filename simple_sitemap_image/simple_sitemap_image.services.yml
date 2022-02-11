@@ -1,0 +1,4 @@
+services:
+  simple_sitemap_image.services:
+    class: Drupal\simple_sitemap_image\SimpleSitemapImageManager
+    arguments: ['@entity_field.manager', '@entity_type.manager', '@file_system']

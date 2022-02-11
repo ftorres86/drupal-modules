@@ -1,0 +1,5 @@
+metatags_import.import:
+  route_name: 'metatags_import.import'
+  base_route: 'entity.metatag_defaults.collection'
+  title: 'Import'
+  weight: 11

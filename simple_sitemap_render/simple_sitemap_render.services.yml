@@ -1,0 +1,5 @@
+services:
+  simple_sitemap_render.route_subscriber:
+    class: Drupal\simple_sitemap_render\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,6 @@
+name: Twitter Connect
+description: 'Provides config forms to set connection to Twitter APIs and services to perform requests to main endpoints to retrieve tweets.'
+package: Custom
+
+core_version_requirement: ^8 || ^9
+type: module

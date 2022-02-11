@@ -1,0 +1,7 @@
+twitter_connect.access_token:
+  path: '/admin/config/twitter'
+  defaults:
+    _form: 'Drupal\twitter_connect\Form\TwitterSettingsForm'
+    _title: 'Twitter API Settings'
+  requirements:
+    _permission: 'administer site configuration'

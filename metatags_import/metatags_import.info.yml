@@ -1,0 +1,9 @@
+name: Metatags Import
+description: This module defines a controller form and custom endpoint to import metatags.
+package: custom
+
+core_version_requirement: ^8 || ^9
+type: module
+
+dependencies:
+  - metatag:metatag

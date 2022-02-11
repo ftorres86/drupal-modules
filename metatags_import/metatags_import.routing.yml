@@ -1,0 +1,14 @@
+metatags_import.import:
+  path: '/admin/config/search/metatag/import'
+  defaults:
+    _form: 'Drupal\metatags_import\Form\MetatagsImportForm'
+    _title: 'Import'
+  requirements:
+    _permission: 'administer meta tags'
+
+metatags_import.download:
+  path: '/ajax/metatag/download/{bundle}/{language}'
+  defaults:
+    _controller: 'Drupal\metatags_import\Form\MetatagsImportForm::getFile'
+  requirements:
+    _permission: 'administer meta tags'

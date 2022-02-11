@@ -1,0 +1,4 @@
+access simple sitemap image generate:
+  title: 'Simple Sitemap Image Generate'
+  description: 'Access to Simple Sitemap Image Generate Feature'
+  restrict access: TRUE

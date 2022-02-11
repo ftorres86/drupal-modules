@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains metatags_import module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function metatags_import_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.metatags_import') {
+    return [
+      'title' => [
+        '#type' => 'html_tag',
+        '#tag' => 'h3',
+        '#value' => 'About',
+      ],
+      'description' => [
+        '#type' => 'html_tag',
+        '#tag' => 'p',
+        '#value' => 'This module defines a custom service to import metatags and urls.',
+      ],
+    ];
+  }
+}

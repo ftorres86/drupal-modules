@@ -1,0 +1,5 @@
+simple_sitemap_image.batch:
+  title: 'Simple Sitemap Image - Generate'
+  description: 'Configure sitemap for images'
+  route_name: simple_sitemap_image.batch
+  parent: system.admin_config_search

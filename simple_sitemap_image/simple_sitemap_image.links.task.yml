@@ -1,0 +1,10 @@
+simple_sitemap_image.batch:
+  title: 'Generate'
+  route_name: simple_sitemap_image.batch
+  base_route: simple_sitemap_image.batch
+
+simple_sitemap_image.settings:
+  title: 'Settings'
+  route_name: simple_sitemap_image.settings
+  base_route: simple_sitemap_image.batch
+

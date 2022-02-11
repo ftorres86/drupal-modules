@@ -1,0 +1,4 @@
+services:
+  twitter_connect.manager:
+    class: '\Drupal\twitter_connect\TwitterManager'
+    arguments: ['@config.factory', '@serialization.json', '@state']
